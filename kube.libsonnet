@@ -672,7 +672,7 @@
     podSelector: std.prune({
       matchLabels:
         if filter != null then $.filterMapByFields($.podRef(obj).metadata.labels, filter)
-        else { app: $.podRef(obj).metadata.labels.app },
+        else $.podRef(obj).metadata.labels,
     }),
   },
 
